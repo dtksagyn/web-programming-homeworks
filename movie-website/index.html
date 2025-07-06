@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Green Gables</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <div class="logo">Green Gables</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About the Series</a></li>
+                <li><a href="#characters">Characters</a></li>
+                <li><a href="#actors">Actors</a></li>
+                <li><a href="#location">Green Gables</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- SECTIONS (Placeholder) -->
+    <section id="home">
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-visual">
+                    <img src="https://images6.alphacoders.com/109/1094049.jpg" alt="Anne with an E Poster"
+                        class="hero-poster">
+                    <h1 class="hero-title">Green Gables: <br>Anne with an E</h1>
+                </div>
+                <p class="summary">
+                    "Anne with an E", Lucy Maud Montgomery'nin klasik romanından uyarlanan, 19. yüzyılda yetim bir kız
+                    olan Anne Shirley'nin maceralarını anlatır. Hayal gücü geniş, konuşkan ve zeki olan Anne; Green
+                    Gables’a yanlışlıkla evlatlık olarak gönderilir. Dizi, kimlik, aidiyet ve büyüme temalarını
+                    işleyerek izleyiciyi duygusal bir yolculuğa çıkarır.
+                </p>
+
+
+            </div>
+
+            <div class="characters">
+                <h2>Başlıca Karakterler</h2>
+                <div class="character-cards">
+                    <div class="card">
+                        <img src="images/anne.jpg" alt="Anne Shirley">
+                        <h3>Anne Shirley-Cuthbert</h3>
+                        <p>Hayal gücü sınırsız, kırmızı saçlı, güçlü bir karakter. En derin duyguları bile sözlerle
+                            ifade eder.</p>
+                    </div>
+                    <div class="card">
+                        <img src="images/gilbert.jpg" alt="Gilbert Blythe">
+                        <h3>Gilbert Blythe</h3>
+                        <p>Zeki, nazik ve hırslı. Anne ile olan ilişkisi zamanla dostluktan aşka dönüşür.</p>
+                    </div>
+                    <div class="card">
+                        <img src="images/marilla.jpg" alt="Marilla Cuthbert">
+                        <h3>Marilla Cuthbert</h3>
+                        <p>Sert mizaçlı ama içten içe sevgi dolu. Anne’in hayatında büyük bir figür haline gelir.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="favorite-scene">
+                <h2>Favori Sahnem</h2>
+                <p>"You are enough. Just as you are." — Bu sahnede Anne’in içsel gücünü keşfetmesi beni çok etkilemişti.
+                </p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/jCE8B2_9HBU" title="Anne with an E"
+                    frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+    </section>
+    <section id="about"></section>
+    <section id="characters"></section>
+    <section id="actors"></section>
+    <section id="location"></section>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+    </script>
+</body>
+
+</html>
