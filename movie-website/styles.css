@@ -1,3 +1,6 @@
+/* ================================================
+   1. ROOT VARIABLES (Color Palette)
+================================================ */
 :root {
   --charcoal: #233d4d;
   --pumpkin: #fe7f2d;
@@ -6,6 +9,9 @@
   --zomp: #619b8a;
 }
 
+/* ================================================
+   2. RESET & BASE
+================================================ */
 * {
   margin: 0;
   padding: 0;
@@ -16,11 +22,14 @@ body {
   font-family: "Georgia", serif;
   background-color: var(--olivine);
   color: var(--charcoal);
+  line-height: 1.6;
 }
 
-/* HEADER */
+/* ================================================
+   3. HEADER & NAVIGATION
+================================================ */
 header {
-  background-color: var(--charcoal);
+  background: var(--charcoal);
   color: white;
   display: flex;
   justify-content: space-between;
@@ -28,17 +37,18 @@ header {
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 1000;
+  transition: top 0.4s ease;
+}
+
+.header-hide {
+  top: -100px;
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
   font-family: "Times New Roman", serif;
-}
-
-nav {
-  position: relative;
 }
 
 .nav-links {
@@ -58,7 +68,7 @@ nav {
   color: var(--sunglow);
 }
 
-/* HAMBURGER */
+/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -73,7 +83,7 @@ nav {
   border-radius: 2px;
 }
 
-/* RESPONSIVE NAV */
+/* Mobile Nav */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -95,10 +105,15 @@ nav {
     display: flex;
   }
 }
+
+/* ================================================
+   4. HERO SECTION
+================================================ */
 .hero {
   background: var(--zomp);
   color: white;
   text-align: center;
+  padding-bottom: 3rem;
 }
 
 .hero-poster {
@@ -107,48 +122,85 @@ nav {
   margin-bottom: 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
-.hero-content {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 2rem;
-}
-
-.hero h1 {
-  font-size: 4rem;
-  font-family: "Georgia", serif;
-  color: var(--sunglow);
-}
-.hero-visual {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  margin: 0 auto;
-}
 
 .hero-title {
   position: absolute;
   top: 40%;
   left: 20%;
   transform: translate(-50%, -50%);
-  font-size: 4rem;
+  font-size: 3.5vw;
   color: var(--sunglow);
-  font-family: "Georgia", serif;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
   z-index: 5;
 }
 
+/* ================================================
+   5. SUMMARY SECTION
+================================================ */
 .summary {
   max-width: 800px;
   margin: 1.5rem auto;
   font-size: 1.1rem;
-  line-height: 1.6;
-  font-family: "Georgia", serif;
+  padding: 0 1rem;
+}
+/* ================================================
+   ePISODE SECTION
+================================================ */
+.episode-carousel-section {
+  padding: 2rem;
+  background-color: #c1f7a3;
 }
 
+.episode-swiper {
+  padding: 2rem 0;
+}
+
+.episode-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
+  display: block;
+  text-decoration: none;
+  color: #000;
+  max-width: 300px;
+  margin: auto;
+}
+
+.episode-card:hover {
+  transform: scale(1.05);
+}
+
+.episode-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.episode-info {
+  padding: 1rem;
+}
+
+.episode-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.episode-info p {
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+/* ================================================
+   6. CHARACTER CARDS
+================================================ */
 .characters {
-  margin-top: 3rem;
+  margin: 3rem auto;
+  width: 90%;
+  max-width: 1200px;
 }
 
 .characters h2 {
@@ -158,14 +210,14 @@ nav {
 }
 
 .character-cards {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
-  justify-content: center;
+  justify-items: center;
 }
 
 .card {
-  background-color: var(--olivine);
+  background: var(--olivine);
   border-radius: 1rem;
   padding: 1rem;
   width: 250px;
@@ -180,6 +232,8 @@ nav {
 
 .card img {
   width: 100%;
+  height: 300px;
+  object-fit: cover;
   border-radius: 0.75rem;
   margin-bottom: 0.5rem;
 }
@@ -189,34 +243,157 @@ nav {
   margin: 0.5rem 0;
 }
 
-.card p {
-  font-size: 0.95rem;
-  line-height: 1.4;
+.card h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--charcoal);
 }
 
-.favorite-scene {
+.card p {
+  font-size: 0.95rem;
+}
+
+/* ================================================
+   7. VIDEO CAROUSEL
+================================================ */
+.video-carousel {
+  max-width: 900px;
+  margin: 4rem auto;
+  text-align: center;
+  padding: 1rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: var(--pumpkin);
+  margin-bottom: 2rem;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-track {
+  display: flex;
+  width: 300%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-track iframe {
+  width: 100%;
+  height: 500px;
+  flex: 0 0 100%;
+  border: none;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(35, 61, 77, 0.8);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  z-index: 2;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.prev:hover,
+.next:hover {
+  background: var(--pumpkin);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* ================================================
+   8. FOOTER
+================================================ */
+.site-footer {
+  background: var(--charcoal);
+  color: white;
+  padding: 2rem 1rem;
+  font-size: 0.95rem;
   margin-top: 4rem;
 }
 
-.favorite-scene h2 {
+.footer-content {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.footer-left h3 {
   color: var(--sunglow);
-  margin-bottom: 1rem;
+  font-family: "Times New Roman", serif;
+  margin-bottom: 0.5rem;
 }
 
-.favorite-scene p {
-  margin-bottom: 1rem;
-  font-style: italic;
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
+.footer-links a {
+  color: var(--sunglow);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--pumpkin);
+}
+
+.footer-right {
+  text-align: right;
+}
+
+/* ================================================
+   9. MEDIA QUERIES
+================================================ */
+
+/* Tablet: 2 columns */
+@media (max-width: 1024px) {
   .character-cards {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: 1 column */
+@media (max-width: 600px) {
+  .character-cards {
+    grid-template-columns: 1fr;
   }
 
-  iframe {
-    width: 100%;
-    height: 200px;
+  .hero-title {
+    font-size: 7vw;
+    top: 10%;
+  }
+
+  .carousel-track iframe {
+    height: 250px;
+  }
+
+  .footer-content,
+  .footer-right {
+    text-align: center;
   }
 }
